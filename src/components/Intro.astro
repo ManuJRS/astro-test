@@ -1,0 +1,22 @@
+---
+export interface IntroProps {
+    introTitle: string;
+    introText: string;
+    introUrl: string;
+    introBtn: string;
+}
+
+const { introTitle, introText, introUrl, introBtn } = Astro.props;
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-0">
+    <div class="bg-gray-100 p-4">
+        <div class="max-w-7xl m-auto py-8">
+            <h2 class="py-5 text-3xl">{introTitle}</h2>
+            <p class="my-4">{introText}</p>
+            <a
+                class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+                href={introUrl}>{introBtn}</a>
+        </div>
+    </div>
+</div>

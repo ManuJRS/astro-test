@@ -1,0 +1,47 @@
+---
+export interface DataProps {
+    dataTitle:string;
+    dataText:string;
+    dataOne:string;
+    labelOne:string;
+    dataTwo:string;
+    labelTwo:string;
+    dataThree:string;
+    labelThree:string;
+    dataUrl:string;
+    dataBtn:string;
+}
+
+const { dataTitle, dataText, dataOne, labelOne, dataTwo, labelTwo, dataThree, labelThree, dataUrl, dataBtn} = Astro.props;
+---
+
+<div class="py-36">
+    <div class="max-w-7xl m-auto py-8">
+        <h2
+            class="text-3xl py-5 flex flex-row items-center justify-center"
+        >
+            {dataTitle}
+        </h2>
+        <p class="my-4">{dataText}</p>
+        <div class="flex flex-row items-center justify-center">
+            <span class="my-5 mx-5 text-center">
+                <h3>{dataOne}</h3>
+                <p>{labelOne}</p>
+            </span>
+            <span class="my-5 mx-5 text-center">
+                <h3>{dataTwo}</h3>
+                <p>{labelTwo}</p>
+            </span>
+            <span class="my-5 mx-5 text-center">
+                <h3>{dataThree}</h3>
+                <p>{labelThree}</p>
+            </span>
+        </div>
+        <div class="flex flex-row items-center justify-center">
+            <a
+                class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+                href={dataUrl}
+                >{dataBtn}</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+---
+export interface EndProps {
+    endTitle:string;
+    endUrl:string;
+    endAlt:string;
+}
+
+const { endTitle, endUrl, endAlt } = Astro.props;
+---
+
+<div class="bg-gray-100 p-4">
+    <div class="max-w-7xl m-auto py-20">
+        <h2 class="text-3xl py-5 flex flex-row items-center justify-center">
+            {endTitle}
+        </h2>
+        <img class="" src={endUrl} alt={endAlt} />
+    </div>
+</div>

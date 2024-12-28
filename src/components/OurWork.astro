@@ -1,0 +1,88 @@
+---
+export interface OurWorkProps {
+    workTitle:string;
+    worktext:string;
+    workImgOne:string;
+    worlUrlOne:string;
+    workTitleOne:string;
+    worlTextOne:string;
+    workImgTwo:string;
+    worlTexTwo:string;
+    workTitleTwo:string;
+    worlTextTwo:string;
+    workImgThree:string;
+    worlUrlThree:string;
+    workTitleThree:string;
+    worlTextThree:string;
+}
+
+const { workTitle, worktext, workImgOne, worlUrlOne, workTitleOne, worlTextOne, workImgTwo, worlUrlTwo, workTitleTwo, worlTextTwo, workImgThree, worlUrlThree, workTitleThree, worlTextThree} = Astro.props;
+---
+
+<div class="bg-gray-100 p-4">
+    <div class="max-w-7xl m-auto py-20">
+        <h3 class="text-3xl py-5 flex flex-row items-center justify-center">
+            {workTitle}
+        </h3>
+        <p>{worktext}</p>
+    </div>
+    <div class="grid grid-cols-3 gap-4">
+        <div class="text-white p-4 flex justify-center items-center">
+            <div
+                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden"
+            >
+                <div class="flex justify-center items-center py-4">
+                    <img
+                        class="w-52"
+                        src={worlUrlOne}
+                        alt={workImgOne}
+                    />
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                        {workTitleOne}
+                    </h3>
+                    <p class="text-gray-600 text-sm">{worlTextOne}</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-white p-4 flex justify-center items-center">
+            <div
+                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden my-7"
+            >
+                <div class="flex justify-center items-center py-4">
+                    <img
+                        class="w-52"
+                        src={worlUrlTwo}
+                        alt={workImgTwo}
+                    />
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                        {workTitleTwo}
+                    </h3>
+                    <p class="text-gray-600 text-sm">{worlTextTwo}</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-white p-4 flex justify-center items-center">
+            <div
+                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden my-7"
+            >
+                <div class="flex justify-center items-center py-4">
+                    <img
+                        class="w-52"
+                        src={worlUrlThree}
+                        alt={workImgThree}
+                    />
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                        {workTitleThree}
+                    </h3>
+                    <p class="text-gray-600 text-sm">{worlTextThree}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

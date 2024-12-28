@@ -1,122 +1,56 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import Intro from "@/components/Intro.astro";
+import Data from "@/components/Data.astro";
+import OurWork from "@/components/OurWork.astro";
+import End from "@/components/End.astro";
 import { getHomeData } from "@/services/home";
 
 const home = await getHomeData();
 ---
 
 <Layout>
-	<div
-		class="relative max-w-7xl m-auto h-screen bg-cover bg-center"
-		style={{ backgroundImage: `url(${home.imgforhero.url})` }}
-	>
-		<h1
-			class="absolute inset-0 flex items-center justify-center text-5xl text-white"
-		>
-			{home.titlehero}
-		</h1>
-	</div>
-	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-0">
-		<div class="bg-gray-100 p-4">
-			<div class="max-w-7xl m-auto py-8">
-				<h2 class="py-5 text-3xl">{home.texfortintro}</h2>
-				<p class="my-4">{home.text}</p>
-				<a
-					class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
-					href={home.btnintrohome.urlbtnintro}
-					>{home.btnintrohome.btntextintro}</a
-				>
-			</div>
-		</div>
-		<div class="py-36">
-			<div class="max-w-7xl m-auto py-8">
-				<h2
-					class="text-3xl py-5 flex flex-row items-center justify-center"
-				>
-					{home.titleD}
-				</h2>
-				<p class="my-4">{home.textD}</p>
-				<div class="flex flex-row items-center justify-center">
-					<span class="my-5 mx-5 text-center">
-						<h3>{home.dataO}</h3>
-						<p>{home.labelDataOne}</p>
-					</span>
-					<span class="my-5 mx-5 text-center">
-						<h3>{home.dataTw}</h3>
-						<p>{home.labelDataTwo}</p>
-					</span>
-					<span class="my-5 mx-5 text-center">
-						<h3>{home.dataTr}</h3>
-						<p>{home.labelDataThree}</p>
-					</span>
-				</div>
-				<div class="flex flex-row items-center justify-center">
-					<a
-						class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
-						href={home.btnDone.urlbtndata}
-						>{home.btnDone.btntextdata}</a
-					>
-				</div>
-			</div>
-		</div>
-		<div class="bg-gray-100 p-4">
-			<div class="max-w-7xl m-auto py-20">
-				<h3 class="text-3xl py-5 flex flex-row items-center justify-center">{home.titleintrocards}</h3>
-				<p>{home.textintrocards}</p>
-			</div>
-			<div class="grid grid-cols-3 gap-4">
-				<div class=" text-white p-4 flex justify-center items-center">
-					<div
-					class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden"
-				>
-					<div class="flex justify-center items-center py-4">
-						<img class="w-52" src={home.imgone.url} alt={home.imgone.alt} />
-					</div>
-					<div class="p-4">
-						<h3 class="text-xl font-semibold text-gray-800 mb-2">
-							{home.titleone}
-						</h3>
-						<p class="text-gray-600 text-sm">{home.textone}</p>
-					</div>
-				</div>
-				</div>
-				<div class=" text-white p-4 flex justify-center items-center">
-					<div
-					class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden my-7"
-				>
-					<div class="flex justify-center items-center py-4">
-						<img class="w-52" src={home.imgtwo.url} alt={home.imgtwo.alt} />
-					</div>
-					<div class="p-4">
-						<h3 class="text-xl font-semibold text-gray-800 mb-2">
-							{home.titletwo}
-						</h3>
-						<p class="text-gray-600 text-sm">{home.texttwo}</p>
-					</div>
-				</div>
-				</div>
-				<div class=" text-white p-4 flex justify-center items-center">
-					<div
-					class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden my-7"
-					>
-						<div class="flex justify-center items-center py-4">
-							<img class="w-52" src={home.imgthree.url} alt={home.imgthree.alt} />
-						</div>
-						<div class="p-4">
-							<h3 class="text-xl font-semibold text-gray-800 mb-2">
-								{home.titlethree}
-							</h3>
-							<p class="text-gray-600 text-sm">{home.textthree}</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="bg-gray-100 p-4">
-			<div class="max-w-7xl m-auto py-20">
-				<h2 class="text-3xl py-5 text-3xl py-5 flex flex-row items-center justify-center">{home.titleend}</h2>
-				<img class="" src={home.imgend.url} alt={home.imgend.alt} />
-			</div>
-		</div>
-	</div>
+	<Hero
+		imgUrl={home.imgforhero.url} 
+		title={home.titlehero} />
+	<Intro
+		introTitle={home.texfortintro}
+		introText={home.text}
+		introUrl={home.btnintrohome.urlbtnintro}
+		introBtn={home.btnintrohome.btntextintro}
+	/>
+	<Data
+		dataTitle={home.titleD}
+		dataText={home.textD}
+		dataOne={home.dataO}
+		labelOne={home.labelDataOne}
+		dataTwo={home.dataTw}
+		labelTwo={home.labelDataTwo}
+		dataThree={home.dataTr}
+		labelThree={home.labelDataThree}
+		dataUrl={home.btnDone.urlbtndata}
+		dataBtn={home.btnDone.btntextdata}
+	/>
+	<OurWork 
+		workTitle={home.titleintrocards} 
+		worktext={home.textintrocards}
+		workImgOne={home.imgone.alt}
+		worlUrlOne={home.imgone.url}
+		workTitleOne={home.titletwo}
+		worlTextOne={home.textone}
+		workImgTwo={home.imgtwo.alt}
+		worlUrlTwo={home.imgtwo.url}
+		workTitleTwo={home.titletwo}
+		worlTextTwo={home.texttwo}
+		workImgThree={home.imgthree.alt}
+		worlUrlThree={home.imgthree.url}
+		workTitleThree={home.titlethree}
+		worlTextThree={home.textthree}
+	/>
+	<End 
+	endTitle={home.titleend}
+	endUrl={home.imgend.url}
+	endAlt={home.imgend.alt}
+	/>
 </Layout>

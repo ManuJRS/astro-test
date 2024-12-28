@@ -1,0 +1,19 @@
+---
+export interface HeroProps {
+    imgUrl: string;
+    title: string;
+}
+
+const { imgUrl, title } = Astro.props;
+---
+
+<div
+    class="relative max-w-7xl m-auto h-screen bg-cover bg-center"
+    style={{ backgroundImage: `url(${imgUrl})` }}
+>
+    <h1
+        class="absolute inset-0 flex items-center justify-center text-5xl text-white"
+    >
+        {title}
+    </h1>
+</div>
