@@ -1,0 +1,21 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "../components/home-develop/header/Header.astro";
+import Hero from "../components/home-develop/Hero.astro";
+import ContentAling from "../components/home-develop/ContentAling.astro";
+import Background from "../components/home-develop/Background.astro";
+import { getHomeDevelopData } from "@/services/home-develop";
+
+const homeData = await getHomeDevelopData()
+const {hero, contentAling, background, seo} = homeData
+const {metaTitle, metaDescription} = seo
+
+//metaTitle: metaTitle ---> es igual a solamente ingresar el nombre de la variable: metaTitle
+---
+
+<Layout meta={{metaTitle, metaDescription}}>
+    <Header />
+    <Hero hero={hero} />
+    <ContentAling contentAling={contentAling}/>
+    <Background background={background} />
+</Layout>

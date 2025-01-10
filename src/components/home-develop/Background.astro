@@ -1,0 +1,20 @@
+---
+import type { BackgroundComponent } from '@/types/home-develop'
+
+interface Props{
+    background:BackgroundComponent
+}
+const {background} = Astro.props
+---
+<section class="w-full bg-slate-100 h-[600px]">
+    <div class="w-full h-full bg-center relative bg-no-repeat bg-cover bg-black" style={`background-image: url('${background.image.url}')`}>
+        <div class="inset-0 bg-black/50 absolute"></div>
+        <div class="max-w-7xl m-auto w-full relative h-full">
+            <div class="w-full h-full flex flex-col justify-center gap-5 items-start">
+                <h2 class="text-gray-100 text-7xl font-semibold">{background.title}</h2>
+                <p class="text-lg w-1/2 text-white">{background.description}</p>
+                <button class="text-white py-2 hover:bg-red-500/60 transition-colors duration-300 bg-red-500 rounded-md px-10">View More</button>
+            </div>
+        </div>
+    </div>
+</section>

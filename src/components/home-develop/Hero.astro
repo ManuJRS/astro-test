@@ -1,0 +1,18 @@
+---
+import type { HeroComponent } from '@/types/home-develop'
+
+interface Props{
+    hero:HeroComponent
+}
+const {hero} = Astro.props
+---
+<section class="w-full bg-slate-100 h-[600px]">
+    <div class="w-full h-full bg-center relative bg-no-repeat bg-cover bg-black" style={`background-image: url('${hero.image.url}')`}>
+        <div class="inset-0 bg-black/50 absolute"></div>
+        <div class="max-w-7xl m-auto w-full relative h-full">
+            <div class="w-full h-full flex justify-center items-center">
+                <h2 class="text-gray-100 text-7xl font-semibold">{hero.title}</h2>
+            </div>
+        </div>
+    </div>
+</section>
